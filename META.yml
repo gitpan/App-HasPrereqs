@@ -1,0 +1,26 @@
+---
+abstract: 'Check whether your Perl installation has prerequisites in dist.ini'
+author:
+  - 'Steven Haryanto <stevenharyanto@gmail.com>'
+build_requires:
+  Module::Build: 0.3601
+configure_requires:
+  Module::Build: 0.3601
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300015, CPAN::Meta::Converter version 2.120921'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: App-HasPrereqs
+requires:
+  Config::IniFiles: 0
+  Log::Any: 0
+  Module::Path: 0
+  Perinci::CmdLine: 0
+  Sort::Versions: 0
+  perl: 5.010000
+resources:
+  homepage: http://metacpan.org/dist/App-HasPrereqs
+  repository: http://github.com/sharyanto/perl-App-HasPrereqs
+version: 0.01

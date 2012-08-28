@@ -17,7 +17,7 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "App-HasPrereqs",
-  "dist_version" => "0.01",
+  "dist_version" => "0.02",
   "license" => "perl",
   "module_name" => "App::HasPrereqs",
   "recommends" => {},
@@ -26,7 +26,7 @@ my %module_build_args = (
     "Config::IniFiles" => 0,
     "Log::Any" => 0,
     "Module::Path" => 0,
-    "Perinci::CmdLine" => 0,
+    "Perinci::CmdLine" => "0.62",
     "Sort::Versions" => 0,
     "perl" => "5.010000"
   },

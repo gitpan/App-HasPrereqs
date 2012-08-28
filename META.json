@@ -29,7 +29,7 @@
             "Config::IniFiles" : "0",
             "Log::Any" : "0",
             "Module::Path" : "0",
-            "Perinci::CmdLine" : "0",
+            "Perinci::CmdLine" : "0.62",
             "Sort::Versions" : "0",
             "perl" : "5.010000"
          }
@@ -42,6 +42,6 @@
          "url" : "http://github.com/sharyanto/perl-App-HasPrereqs"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
 

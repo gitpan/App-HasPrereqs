@@ -3,18 +3,23 @@ NAME
     in dist.ini
 
 VERSION
-    version 0.02
+    version 0.03
 
 SYNOPSIS
      # Use via has-prereqs CLI script
 
+DESCRIPTION
+    This module has Rinci metadata.
+
 FUNCTIONS
+    None are exported by default, but they are exportable.
+
   has_prereqs(%args) -> [status, msg, result, meta]
     Check whether your Perl installation has prerequisites in dist.ini.
 
     Arguments ('*' denotes required arguments):
 
-    *   library* => *array*
+    *   library => *array*
 
         Add directory to @INC.
 

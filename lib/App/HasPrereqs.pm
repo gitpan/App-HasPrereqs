@@ -14,7 +14,7 @@ require Exporter;
 our @ISA       = qw(Exporter);
 our @EXPORT_OK = qw(has_prereqs);
 
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 $SPEC{has_prereqs} = {
     v => 1.1,
@@ -57,6 +57,7 @@ sub has_prereqs {
                 } elsif (!module_path($mod)) {
                     push @errs, {
                         module  => $mod,
+                        needed_version => $v,
                         message => "Missing"};
                 }
             } else {
@@ -66,6 +67,8 @@ sub has_prereqs {
                     unless (Sort::Versions::versioncmp($iv, $v) >= 0) {
                         push @errs, {
                             module  => $mod,
+                            has_version => $iv,
+                            needed_version => $v,
                             message => "Version too old ($iv, needs $v)"};
                     }
                     next MOD;
@@ -74,6 +77,7 @@ sub has_prereqs {
                 unless ($INC{$modp} || eval { require $modp; 1 }) {
                     push @errs, {
                         module  => $mod,
+                        needed_version => $v,
                         message => "Missing"};
                     next MOD;
                 }
@@ -82,6 +86,8 @@ sub has_prereqs {
                 unless ($iv && Sort::Versions::versioncmp($iv, $v) >= 0) {
                     push @errs, {
                         module  => $mod,
+                        has_version => $iv,
+                        needed_version => $v,
                         message => "Version too old ($iv, needs $v)"};
                 }
             }
@@ -89,7 +95,7 @@ sub has_prereqs {
     }
 
     [200, @errs ? "Some prerequisites unmet" : "OK", \@errs,
-     {"cmdline.exit_code"=>@errs ? 1:0}];
+     {"cmdline.exit_code"=>@errs ? 200:0}];
 }
 
 1;
@@ -105,14 +111,21 @@ App::HasPrereqs - Check whether your Perl installation has prerequisites in dist
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
  # Use via has-prereqs CLI script
 
+=head1 DESCRIPTION
+
+
+This module has L<Rinci> metadata.
+
 =head1 FUNCTIONS
 
+
+None are exported by default, but they are exportable.
 
 =head2 has_prereqs(%args) -> [status, msg, result, meta]
 
@@ -122,7 +135,7 @@ Arguments ('*' denotes required arguments):
 
 =over 4
 
-=item * B<library>* => I<array>
+=item * B<library> => I<array>
 
 Add directory to @INC.
 

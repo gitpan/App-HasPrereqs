@@ -14,7 +14,7 @@ require Exporter;
 our @ISA       = qw(Exporter);
 our @EXPORT_OK = qw(has_prereqs);
 
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 $SPEC{has_prereqs} = {
     v => 1.1,
@@ -113,7 +113,7 @@ App::HasPrereqs - Check whether your Perl installation has prerequisites in dist
 
 =head1 VERSION
 
-This document describes version 0.04 of App::HasPrereqs (from Perl distribution App-HasPrereqs), released on 2014-07-22.
+This document describes version 0.05 of App::HasPrereqs (from Perl distribution App-HasPrereqs), released on 2014-08-16.
 
 =head1 SYNOPSIS
 

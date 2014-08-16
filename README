@@ -3,8 +3,8 @@ NAME
     in dist.ini
 
 VERSION
-    This document describes version 0.04 of App::HasPrereqs (from Perl
-    distribution App-HasPrereqs), released on 2014-07-22.
+    This document describes version 0.05 of App::HasPrereqs (from Perl
+    distribution App-HasPrereqs), released on 2014-08-16.
 
 SYNOPSIS
      # Use via has-prereqs CLI script

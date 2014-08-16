@@ -26,7 +26,7 @@ my %WriteMakefileArgs = (
     "Config::IniFiles" => 0,
     "Log::Any" => 0,
     "Module::Path" => 0,
-    "Perinci::CmdLine::Any" => 0,
+    "Perinci::CmdLine::Any" => "0.06",
     "Rinci" => "v1.1.0",
     "Sort::Versions" => 0
   },
@@ -36,7 +36,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.04",
+  "VERSION" => "0.05",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -50,7 +50,7 @@ my %FallbackPrereqs = (
   "IPC::Open3" => 0,
   "Log::Any" => 0,
   "Module::Path" => 0,
-  "Perinci::CmdLine::Any" => 0,
+  "Perinci::CmdLine::Any" => "0.06",
   "Rinci" => "v1.1.0",
   "Sort::Versions" => 0,
   "Test::More" => 0

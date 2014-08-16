@@ -1,14 +1,20 @@
 #!perl
 
-use 5.010;
+# Note: This script is a CLI interface to Riap function /App/HasPrereqs/has_prereqs
+# and generated automatically using Dist::Zilla::Plugin::Rinci::ScriptFromFunc version 0.01
+
+our $DATE = '2014-08-16'; # DATE
+our $VERSION = '0.05'; # VERSION
+
+use 5.010001;
 use strict;
 use warnings;
 
-use Perinci::CmdLine::Any;
+use Perinci::CmdLine::Any -prefer_lite=>1;
 
-our $VERSION = '0.04'; # VERSION
-
-Perinci::CmdLine::Any->new(url => '/App/HasPrereqs/has_prereqs')->run;
+Perinci::CmdLine::Any->new(
+    url => "/App/HasPrereqs/has_prereqs",
+)->run;
 
 # ABSTRACT: Check whether your Perl installation has prerequisites in dist.ini
 # PODNAME: has-prereqs
@@ -25,25 +31,27 @@ has-prereqs - Check whether your Perl installation has prerequisites in dist.ini
 
 =head1 VERSION
 
-This document describes version 0.04 of has-prereqs (from Perl distribution App-HasPrereqs), released on 2014-07-22.
+This document describes version 0.05 of has-prereqs (from Perl distribution App-HasPrereqs), released on 2014-08-16.
 
 =head1 SYNOPSIS
 
-To use, run the program on your top-level distribution dir, where C<dist.ini> is
-located.
+Usage:
 
- % cd Your-Module
  % has-prereqs
 
-On success, nothing will be output.
+Examples:
 
-On errors, error messages will be printed, for example:
+ TODO
 
- [455] Missing prerequisites: Foo
- [456] Installed version too old: Bar (1.01, needs 1.12)
- ERROR 500: Some prerequisites unmet
+To see all options:
 
-For more options, type C<has-prereqs -h>.
+ % has-prereqs --help
+
+=head1 DESCRIPTION
+
+=head1 OPTIONS
+
+ TODO
 
 =head1 HOMEPAGE
 

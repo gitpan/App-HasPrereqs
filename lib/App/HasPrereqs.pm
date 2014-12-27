@@ -1,20 +1,21 @@
 package App::HasPrereqs;
 
+our $DATE = '2014-12-27'; # DATE
+our $VERSION = '0.06'; # VERSION
+
 use 5.010001;
 use strict;
 use warnings;
 use Log::Any qw($log);
 
 use Config::IniFiles;
-use Module::Path qw(module_path);
+use Module::Path::More qw(module_path);
 use Sort::Versions;
 
 our %SPEC;
 require Exporter;
 our @ISA       = qw(Exporter);
 our @EXPORT_OK = qw(has_prereqs);
-
-our $VERSION = '0.05'; # VERSION
 
 $SPEC{has_prereqs} = {
     v => 1.1,
@@ -54,7 +55,7 @@ sub has_prereqs {
             if ($v eq '0') {
                 if ($mod eq 'perl') {
                     # do nothing
-                } elsif (!module_path($mod)) {
+                } elsif (!module_path(module => $mod)) {
                     push @errs, {
                         module  => $mod,
                         needed_version => $v,
@@ -99,7 +100,7 @@ sub has_prereqs {
 }
 
 1;
-#ABSTRACT: Check whether your Perl installation has prerequisites in dist.ini
+# ABSTRACT: Check whether your Perl installation has prerequisites in dist.ini
 
 __END__
 
@@ -113,7 +114,7 @@ App::HasPrereqs - Check whether your Perl installation has prerequisites in dist
 
 =head1 VERSION
 
-This document describes version 0.05 of App::HasPrereqs (from Perl distribution App-HasPrereqs), released on 2014-08-16.
+This document describes version 0.06 of App::HasPrereqs (from Perl distribution App-HasPrereqs), released on 2014-12-27.
 
 =head1 SYNOPSIS
 
@@ -167,11 +168,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
